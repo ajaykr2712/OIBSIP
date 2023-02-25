@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="temp-css.css">
+</head>
+
+<body>
+    <div class="container">
+       
+        <p>
+            <label>Fahrenheit</label>
+            <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+            oninput="temperatureConverter(this.value)"
+            onchange="temperatureConverter(this.value)">
+          </p>
+        <p style="padding: 5%;">Celsius: <span id="outputCelsius" type="number" placeholder="Fahrenheit"></span></p>
+        
+        <p>
+           <label>Celsius</label>
+           <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter2(this.value)" 
+           onchange="temperatureConverter2(this.value)">
+        </p>
+        <p style="padding: 5%;">Fahrenheit: <span id="outputFahrenheit"></span></p>
+       
+    </div>
+   
+    <script>
+        
+        function temperatureConverter(valNum) {
+      valNum = parseFloat(valNum);
+      document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+      }
+     
+      function temperatureConverter2(valNum) {
+      valNum = parseFloat(valNum);
+      document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+      }
+    </script>
+
+</body>
+
+</html>
+        
