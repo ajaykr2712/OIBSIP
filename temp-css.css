@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Baloo 2', sans-serif; /* Changed font family */
 }
 
 body {
     background-color: #d2d2d2;
     background-image: url(temp.jpeg);
+    background-size: cover; /* Ensure background image covers the entire viewport */
 }
 
 .container {
@@ -22,12 +24,12 @@ body {
     box-shadow: 0 20px 25px rgba(226, 156, 63, 0.25);
     border-radius: 8px;
     font-size: 18px;
-    
 }
 
 .input_box {
-    width: 51%;
-    margin-left: 95px;
+    width: 70%; /* Adjusted input box width for better alignment */
+    margin-left: auto; /* Center the input box */
+    margin-right: auto; /* Center the input box */
     margin-bottom: 42px;
 }
 
@@ -36,10 +38,11 @@ label {
     font-weight: 600;
     border: 2px dashed #e9e5e5;
     border-radius: 3px;
+    padding: 10px; /* Added padding for better appearance */
 }
 
 input {
-    width: 100%;
+    width: calc(100% - 24px); /* Adjusted input width to account for padding */
     height: 50px;
     border-radius: 9px;
     border: 2px solid #d2d2d2;
@@ -52,4 +55,3 @@ input:focus {
     border: 2px dashed #d2d2d2;
     background-color: #d2d2d2;
 }
-        
