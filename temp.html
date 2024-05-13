@@ -11,38 +11,37 @@
 
 <body>
     <div class="container">
-       
         <p>
-            <label>Fahrenheit</label>
-            <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
-            oninput="temperatureConverter(this.value)"
-            onchange="temperatureConverter(this.value)">
-          </p>
-        <p style="padding: 5%;">Celsius: <span id="outputCelsius" type="number" placeholder="Fahrenheit"></span></p>
+            <label for="inputFahrenheit">Fahrenheit</label>
+            <input id="inputFahrenheit" type="number" placeholder="Enter Fahrenheit"
+                oninput="convertFahrenheitToCelsius(this.value)"
+                onchange="convertFahrenheitToCelsius(this.value)">
+        </p>
+        <p style="padding: 5%;">Celsius: <span id="outputCelsius"></span></p>
         
         <p>
-           <label>Celsius</label>
-           <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter2(this.value)" 
-           onchange="temperatureConverter2(this.value)">
+            <label for="inputCelsius">Celsius</label>
+            <input id="inputCelsius" type="number" placeholder="Enter Celsius"
+                oninput="convertCelsiusToFahrenheit(this.value)"
+                onchange="convertCelsiusToFahrenheit(this.value)">
         </p>
         <p style="padding: 5%;">Fahrenheit: <span id="outputFahrenheit"></span></p>
-       
     </div>
    
     <script>
+        function convertFahrenheitToCelsius(value) {
+            const fahrenheit = parseFloat(value);
+            const celsius = (fahrenheit - 32) / 1.8;
+            document.getElementById("outputCelsius").textContent = celsius.toFixed(2);
+        }
         
-        function temperatureConverter(valNum) {
-      valNum = parseFloat(valNum);
-      document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
-      }
-     
-      function temperatureConverter2(valNum) {
-      valNum = parseFloat(valNum);
-      document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
-      }
+        function convertCelsiusToFahrenheit(value) {
+            const celsius = parseFloat(value);
+            const fahrenheit = (celsius * 1.8) + 32;
+            document.getElementById("outputFahrenheit").textContent = fahrenheit.toFixed(2);
+        }
     </script>
 
 </body>
 
 </html>
-        
